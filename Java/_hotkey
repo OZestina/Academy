@@ -22,6 +22,9 @@ tab
 shift + tab
 > 내어쓰기(outdentation, un-indentation)
 
+ctrl + shift + f
+> 자동 포맷팅(코드정리)
+
 -----------------------------------------------------
 줄 복사: ctrl + alt + ↑/↓
 줄 이동: alt + ↑/↓
