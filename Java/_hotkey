@@ -14,9 +14,16 @@ syso/sysout + ctrl + spacebar
 
 ctrl + /
 > comment(주석, //)
+> 블록잡아서 한 번에 처리 가능
+> 이미 주석처리된 라인/블록에 다시 한 번 단축키 사용하면 주석처리 해제
 
 tab
 > 들여쓰기(indentation)
 shift + tab
 > 내어쓰기(outdentation, un-indentation)
 
+-----------------------------------------------------
+줄 복사: ctrl + alt + ↑/↓
+줄 이동: alt + ↑/↓
+한 줄 삭제: ctrl + d
+페이지 이동: ctrl + ↑/↓
