@@ -1,11 +1,22 @@
 cntl + n
-> 새로 만들기 (package, class 
+> 새로 만들기 (project, package, class, etc.)
 
 ctrl + s
 > 저장
 
 ctrl + F11
-> project Run
+> 컴파일 & 실행
+
+[자동완성] : ctrl + spacebar
 
 syso/sysout + ctrl + spacebar
 > System.out.println(); 자동 완성 (eclipse 필요)
+
+ctrl + /
+> comment(주석, //)
+
+tab
+> 들여쓰기(indentation)
+shift + tab
+> 내어쓰기(outdentation, un-indentation)
+
