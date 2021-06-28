@@ -8,9 +8,9 @@ ctrl + F11
 > 컴파일 & 실행
 
 [자동완성] : ctrl + spacebar
-
-syso/sysout + ctrl + spacebar
-> System.out.println(); 자동 완성 (eclipse 필요)
+  > syso/sysout + 단축키 : System.out.println();
+  > main + 단축키 : public static void main(String[] args) 
+  
 
 ctrl + /
 > comment(주석, //)
