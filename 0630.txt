@@ -1,0 +1,79 @@
+<ppt 연습문제 해볼것>
+
+-94
+-115(override)
+-------------------------------------
+int sum = 0;
+for(int i=1; i<=10; i++) {
+    sum = sum + i;
+}
+System.out.println(sum);	//55
+
+1) 기본데이터는 덮어쓸 수 있다
+	>sum 값은 다른 int로 덮어쓸 수 있다
+2) 대입연산 시 컴파일 순서
+	> '=' 이후의 연산을 먼저 하고 왼쪽의 변수에 대입
+	> sum+i 값을 다시 sum에 대입하게됨
+-------------------------------------
+IDE에는 디버깅 해주는 애가 있대!
+i.. development environment
+Integrated!
+-------------------------------------
+[Java] continue;
+
+//반복문을 계속하라는 의미
+//(조건에 맞는 경우) 아래에 있는 코드는 제외하고 다음 반복으로 넘어감
+
+int m1 = 0, m2=0;
+		
+for (int i = 1; i <= 10; i++) {
+	if (i%3 != 0) {
+		m1 += i;
+	}
+}
+System.out.println("m1: "+m1); //m1: 37
+		
+for (int i = 1; i <= 10; i++) {
+	if (i%3 == 0) {
+		continue;	//다음 반복으로 넘어가라 (조건 만족 시 이하의 코드는 무시)
+	}
+	m2 += i;
+}
+System.out.println("m2: "+m2); //m2: 37
+-------------------------------------
+//3개 수 비교하는 짧은 코드 생각 (로직)
+
+-------------------------------------
+[Java] scanner
+//콘솔입력
+Scanner sc = new Scanner(System.in);
+(소괄호 안에 System.in 넣는거 잊지 말긔><)
+
+String name = sc.next();
+	//String 입력
+	//단어 단위로 입력이 진행돼 띄어쓰기가 안된다
+String place = sc.nextLine(); 
+	// 문장 기준(enter 입력 기준) String 입력
+	//근데 그 전에 입력하려고 친 엔터 인식함...ㅎㅎㅎㅎㅎ
+	// 그래서 그 전에 sc.nextLine(); 하나 더 넣어줘서 이미 입력된 enter를 없애줘야한다
+
+int ___ = sc.nextInt();
+	//콘솔창에서 입력한 데이터를 int로 받아서 ___에 저장
+double ___ = sc.nextDouble();
+boolean ___ = sc.nextBoolean();
+-------------------------------------
+[Java] Swing
+
+JFrame __ = new JFrame();
+__.setSize(300, 400);
+__.setVisible(true);
+
+라벨.setText();
+입력칸.getText();
+
+(중요중요)
+버튼이 눌린 후에 시행되는 것이면,
+버튼 액션 중괄호 안에 코드를 넣어야 한다!
+-------------------------------------
+unit test (단위 테스트): 부분부분 테스트
+통합테스트: 전체 테스트
