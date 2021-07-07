@@ -1,0 +1,51 @@
+24-29
+74~76
+94~96
+99
+101~
+
+131~141 진도
+---------------------------------------------
+버튼 사이즈 조정하는 방법
+---------------------------------------------
+2차원 배열
+int[][] s = new int[3][5];
+row행 개수, column열의 개수 순 (가로세로순)
+//각 행의 길이가 다르게 만들 수 있다.
+
+
+row: 행, 레코드
+column: 열, 항목, 필드, 아이템
+---------------------------------------------
+
+
+Object? 
+---------------------------------------------
+<그래픽_swing>
+
+//frame 생성 및 노출
+JFrame f = new JFrame("(타이틀)");
+f.setSize(n,m);	//(width, height)
+f.setVisible(true);	//true면 보임, false면 안보임
+		//가장 마지막에 넣어야함!!
+f.setTitle("(새로운 타이틀)");
+
+//flow 변경
+FlowLayout flow = new FlowLayout();
+f.setLayout(flow);
+
+//button 생성
+JButton __ = new JButton("(버튼 안에 들어가는 텍스트");
+(frame명).add((button명));	//프레임에 버튼 추가
+(버튼명).setEnabled(false);	//false면 안눌림
+(버튼명).setBackground(Color.pink);	//버튼색
+
+__.addActionListener(new ActionListener()) => 자동완성		//눌렀을 때 반응
+e.getActionCommand();	//버튼 안 텍스트 가져옴
+e.getSource()	//주소값 리턴해줌
+
+//font 생성
+Font font = new Font("궁서",Font.BOLD,30);
+	//(글씨체, bold 등, 글씨크기)
+(버튼명).setFont(font);	//이렇게 반영
+
