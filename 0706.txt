@@ -1,0 +1,111 @@
+10~22
+67~
+
+
+131~141 진도
+-------------------------------------------
+배열: 
+1) 길이 고정
+2) 동일한 타입
+-------------------------------------------
+<정수형: 초기값0>
+byte (1byte)
+short (2)
+int (4) +-21만
+long (8): L 써조야함
+
+char (2): 초기값 " "(공백,띄어쓰기)
+
+<실수형: 초기값0.0>
+float(4): f 써조야함
+double (8)
+
+<논리형: 초기값 false>
+boolean (1) 
+
+String: 초기값 null
+-------------------------------------------
+<Run했을 때 발생 가능한 에러>
+
+1)번역단계: 컴파일, 컴파일러(javac.exe)
+javac 영화예매.java
+	>Compile error(컴파일 에러): 코드가 잘못돼서 컴파일 시에 에러가 발생하는 것
+	> 디버깅, 디버거
+
+2)실행단계: 인터프리트, 인터프리터(java.exe)
+java 영화예매
+	> Runtime error(실행에러): 잘못된 입력값으로 error뜨는 것
+
+-------------------------------------------
+<bin 폴더는 뭔가요?>
+
+실행파일을 모아놓은 폴더
+	> 컴파일 프로그램도 있음!
+
+	> 자바 실행파일은 .class 
+	> .class 도 실행을 위해 bin 하에 있어야함
+
+-------------------------------------------
+<이클립스>
+파일 실행 시 입력값을 넣고 싶을 때
+실행 파일 오른쪽 버튼 > Run as > Run 
+Configurations > 실행하고싶은 파일의 Arguments 탭에서 Program arguments에 입력
+	> arguments 입력 시 띄어쓰기하면 서로 다른 배열 인자로 인식
+	> Run Configurations 에 실행파일이 없을 경우 파일 실행 한 번 하고 다시 들어가면 됨
+-------------------------------------------
+변수에 저장된 것은 값 or 주소값
+
+-------------------------------------------
+
+-------------------------------------------
+<String용 함수>
+
+String s = "나는 프로grammer프야";
+String s2 = "진짜!!";
+
+>스트링 결합		
+System.out.println(s+s2);
+System.out.println(s.concat(s2));
+
+>n번째 문자(char) 추출
+System.out.println(s.charAt(n));
+
+>str로 끝나는 지 확인
+System.out.println(s.endsWith("str"));
+
+>추출 (n이상 m미만, m없으면 끝까지)
+System.out.println(s.substring(n));
+System.out.println(s.substring(n,m));		
+
+>s에 s2가 포함되어있나
+System.out.println(s.contains(s2));
+
+>해당하는 str의 마지막 idx값 리턴
+System.out.println(s.lastIndexOf("str"));
+
+>대문자/소문자 변경
+System.out.println(s.toUpperCase());
+System.out.println(s.toLowerCase());
+
+>글자 수(String 길이, 띄어쓰기 포함) 구하기
+System.out.println(s.length());
+
+>str 일부 치환
+System.out.println(s.replace("나", "너"));
+
+> String을 "n"을 기준으로 배열로 나누기 (만들어지는 배열에서 n은 없어짐)
+String s[] = s.split("n");
+
+> String 앞뒤의 공백을 제거
+String s2 = s1.trim();
+
+-------------------------------------------
+<데이터 정렬>
+Arrays.sort(num);	//원본이 변형되는 파괴함수
+
+The Q )
+정렬 함수가 파괴함수인 이유가 있을 것 같아
+-------------------------------------------
+JDK: Java Development Kit
+JRE: Java Runtime Environment
+JVM: Java Virtual Machine 다른 운영체제에 깔아서 Java class가 돌아가도록 해주는 것 
