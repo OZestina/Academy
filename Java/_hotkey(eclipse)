@@ -25,6 +25,10 @@ shift + tab
 ctrl + shift + f
 > 자동 포맷팅(코드정리)
 
+ctrl + shift + o
+> 자동 import
+
+
 () + F2
 > 관련 메시지 창 (에러/워닝 설명 혹은 대처 방법 제안 창) 표시
 > error 혹은 warning 메시지가 밑줄로 뜨는 부분에 커서(문자커서)를 두고 F2 클릭
