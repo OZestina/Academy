@@ -3,7 +3,7 @@
   > (개발자로 가입 후 다운)
 
 
-//추가 프로그램(자동완성기능)
+//Java IDE 프로그램
 - eclipse
 - IntelliJ
 
@@ -31,3 +31,17 @@ preferences>general : show heap status (체크v)
 
 //공용 컴퓨터를 사용하고 있다면
   > java 실행 후 workspace 내것으로 바꾸고 시작!
+
+
+//Java(eclipse) 상 DB 연결을 위한 추가 설치 파일 (from MVN repository)
+1) MySQL Connector/J
+	> 5.1.46 버전 (JDK 5.5 버전과 잘 호환되는 애)
+	> jar (java archive) 파일 다운
+
+2) JSON (airlift)
+	> 207 버전 (가장 최신)
+	> jar (java archive) 파일 다운
+
+*다운받은 jar 파일은 하기방법으로 연결
+(이클립스 상) jar 파일을 사용할 프로젝트에서 마우스 오른쪽 버튼
+>build path >configure build path >Libraries(tab) >Add External JARs >(다운받은 jar 주소 찾아서 선택)
