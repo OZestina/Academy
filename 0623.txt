@@ -19,7 +19,7 @@ ini: 설정파일. initialize 초기 설정값 보유
 프로그램에서 어느 정도의 램을 사용할 것인가
 (수업에서는 computer ram의 절반정도를 기본값으로 설정)
 
-	eclipse에서 사용하는 ram 변경하기
+	eclipse에서 사용하는 ram 변경하기 (eclipse.ini 파일 notepad로 열어서 변경)
 	-Xms(기본값)
 	-Xmx(maximum)
 	윈도우에서는 기가바이트를 g로 인식 가능.
