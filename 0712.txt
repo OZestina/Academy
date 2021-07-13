@@ -1,0 +1,76 @@
+command line Interface (CLI)
+
+DB - table - column
+------------------------------------
+SQL : structured query language
+//DB에서 사용하는 언어(문법)
+//비 절차적 언어 성격 (순서가 있는게 아니다)
+------------------------------------
+RDB (relational DB): 관계형 DB
+- 각 테이블 사이에 관계가 있다~
+
+object vs entity ?
+객체지향언어 - 부품으로 만들 대상 (object, 객체)
+DBMS - 테이블로 저장할 대상(entity, 개체)
+
+------------------------------------
+
+show databases;
+create database virus; //virus DB 생성
+
+use virus; //virus DB 선택
+(Database changed 뜸)
+
+create table member(	//enter
+-> id varchar(100),
+-> pw varchar(100),
+-> name varchar(100),
+-> tel varchar(100)
+-> );
+
+insert into member values ('apple', '','','');
+
+select * from member;
+select tel, id from member;
+
+select * from member where id = 'apple';
+
+update member set tel = '999';
+(대입의 의미)
+update member set tel = '999' where id = 'apple';
+update member set pw = null, tel = null where id = '2';
+
+
+delete from member; (다 지우기, schema는 남음)
+delete from member where id = 'apple2';
+
+drop table member;
+
+show tables; (s 중요!)
+
+drop database virus;
+
+
+-----------------------------------------
+varchar: variable character
+varchar(100): 최대 100개의 가변적인 캐릭터 저장 가능 (조금만 저장하면 메모리 조금만 사용됨. 최대는 100글자)
+-----------------------------------------
+MySQL에서의 데이터 타입: 테이블 만들 때(스키마 디자인/설계할 때)
+- 문자/글자: varchar, char, text
+	>char(13): 무조건 13글자 저장할 공간 할당(fixed!), 글자의 수가 고정되어 있는 경우 (ex. 주민번호)
+	>varchar(13): 입력된 글자 수에 따라 저장 공간을 동적으로 할당, 글자의 수가 가변적인 경우에 사용 (ex. 이름)
+	>text: 글자수가 256글자를 초과할 때 (ex. 신문기사, 논문)
+
+- 정수: int
+- 실수: float
+-----------------------------------------
+
+- Data Definition Languages(DDL, 데이터 정의 언어): create, drop, alter - Schema(틀, 뼈대) 생성
+- Data Manipulation Languages(DML, 데이터 조작 언어): insert, select, update, delete
+- Data Control Languages(DCL, 데이터 제어 언어): rollback(취소), commit(반영), 계정생성, 계정삭제, 계정권한부여 등 
+
+
+-----------------------------------------
+
+함수 이름에서 "ctrl+마우스클릭" 하면 함수 정보가 뜬다
+-> 만약 뜨지 않으면, jdk폴더 내에 있는 src.zip을 source로 attach해주면 된다!
