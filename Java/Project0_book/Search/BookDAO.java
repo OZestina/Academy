@@ -40,7 +40,7 @@ public class BookDAO {
 		return result;
 	}// end of 도서 검색
 
-	// 도서 검색
+	// 도서 키워드 검색
 	public ArrayList<String[]> searchRead(String opt, String keyword) throws Exception {
 		// 1. JDBC connector 설정
 		Class.forName("com.mysql.jdbc.Driver");
@@ -93,7 +93,41 @@ public class BookDAO {
 		}
 
 		return result;
-	}// end of 도서 검색
+	}// end of 도서 키워드 검색
+	
+	// 도서 판매량 검색
+	public ArrayList<String[]> searchRead(int qty) throws Exception {
+		// 1. JDBC connector 설정
+		Class.forName("com.mysql.jdbc.Driver");
+		System.out.println("1. connector 연결 성공!");
+
+		// 2. Java에서 DB로 연결. 필요한 정보: 연결할 주소 Url (ip, port, DB명), username, password
+		String url = "jdbc:mysql://localhost:3306/bookstore";
+		String username = "root";
+		String password = "1234";
+		Connection con = DriverManager.getConnection(url, username, password);
+		System.out.println("2. bookstore DB 연결 성공!");
+
+		// 3.SQL문을 만든다.
+		String sql = "select bookname, writer, genre, price, sold from book order by sold desc";
+		PreparedStatement ps = con.prepareStatement(sql);
+		System.out.println("3. SQL문 생성 완료");
+
+		// 4.SQL문을 MySQL로 전송한다.
+		ResultSet rs = ps.executeQuery();
+		System.out.println("4. SQL문 전송 완료");
+		// System.out.println(rs.next()); // record 값이 있는지 확인, 한 번만 써야한다!!!!!!!!
+
+		ArrayList<String[]> result = new ArrayList<String[]>();
+		while (rs.next()) {
+			if (Integer.parseInt(rs.getString(5)) >= qty) {
+				result.add(new String[] { rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
+						rs.getString(5) });
+			}
+		}
+
+		return result;
+	}// end of 도서 판매량 검색
 
 	// 도서 가격 검색
 	public ArrayList<String[]> searchPrice() throws Exception {
@@ -126,6 +160,40 @@ public class BookDAO {
 
 		return result;
 	}// end of 도서 가격 검색
+	
+	// 도서 가격 키워드 검색
+		public ArrayList<String[]> searchPrice(int keyPrice) throws Exception {
+			// 1. JDBC connector 설정
+			Class.forName("com.mysql.jdbc.Driver");
+			System.out.println("1. connector 연결 성공!");
+
+			// 2. Java에서 DB로 연결. 필요한 정보: 연결할 주소 Url (ip, port, DB명), username, password
+			String url = "jdbc:mysql://localhost:3306/bookstore";
+			String username = "root";
+			String password = "1234";
+			Connection con = DriverManager.getConnection(url, username, password);
+			System.out.println("2. bookstore DB 연결 성공!");
+
+			// 3.SQL문을 만든다.
+			String sql = "select bookname, writer, genre, price, sold from book order by price desc";
+			PreparedStatement ps = con.prepareStatement(sql);
+			System.out.println("3. SQL문 생성 완료");
+
+			// 4.SQL문을 MySQL로 전송한다.
+			ResultSet rs = ps.executeQuery();
+			System.out.println("4. SQL문 전송 완료");
+			// System.out.println(rs.next()); // record 값이 있는지 확인, 한 번만 써야한다!!!!!!!!
+
+			ArrayList<String[]> result = new ArrayList<String[]>();
+			while (rs.next()) {
+				if (Integer.parseInt(rs.getString(4)) <= keyPrice) {
+					result.add(new String[] { rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
+							rs.getString(5) });
+				}
+			}
+
+			return result;
+		}// end of 도서 가격 키워드 검색
 
 	// 인기 도서
 	public String[][] tableRead() throws Exception {
