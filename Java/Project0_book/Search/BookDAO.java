@@ -8,9 +8,8 @@ import java.util.ArrayList;
 
 public class BookDAO {
 
-	// book 등록
-	public int create(String bookname, String writer, String genre, int price, int sold, String image)
-			throws Exception {
+	// 도서 검색
+	public ArrayList<String[]> searchRead() throws Exception {
 		// 1. JDBC connector 설정
 		Class.forName("com.mysql.jdbc.Driver");
 		System.out.println("1. connector 연결 성공!");
@@ -23,56 +22,111 @@ public class BookDAO {
 		System.out.println("2. bookstore DB 연결 성공!");
 
 		// 3.SQL문을 만든다.
-		String sql = "insert into book values(null,?,?,?,?,?,?)";
+		String sql = "select bookname, writer, genre, price, sold from book order by sold desc";
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setString(1, bookname);
-		ps.setString(2, writer);
-		ps.setString(3, genre);
-		ps.setInt(4, price);
-		ps.setInt(5, sold);
-		ps.setString(6, image);
 		System.out.println("3. SQL문 생성 완료");
 
 		// 4.SQL문을 MySQL로 전송한다.
-		int result = ps.executeUpdate();
+		ResultSet rs = ps.executeQuery();
 		System.out.println("4. SQL문 전송 완료");
-		System.out.println(result);
+		// System.out.println(rs.next()); // record 값이 있는지 확인, 한 번만 써야한다!!!!!!!!
+
+		ArrayList<String[]> result = new ArrayList<String[]>();
+		while (rs.next()) {
+			result.add(new String[] { rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
+					rs.getString(5) });
+		}
 
 		return result;
-	}// end of create
+	}// end of 도서 검색
 
 	// 도서 검색
-		public ArrayList<String[]> searchRead() throws Exception {
-			// 1. JDBC connector 설정
-			Class.forName("com.mysql.jdbc.Driver");
-			System.out.println("1. connector 연결 성공!");
+	public ArrayList<String[]> searchRead(String opt, String keyword) throws Exception {
+		// 1. JDBC connector 설정
+		Class.forName("com.mysql.jdbc.Driver");
+		System.out.println("1. connector 연결 성공!");
 
-			// 2. Java에서 DB로 연결. 필요한 정보: 연결할 주소 Url (ip, port, DB명), username, password
-			String url = "jdbc:mysql://localhost:3306/bookstore";
-			String username = "root";
-			String password = "1234";
-			Connection con = DriverManager.getConnection(url, username, password);
-			System.out.println("2. bookstore DB 연결 성공!");
+		// 2. Java에서 DB로 연결. 필요한 정보: 연결할 주소 Url (ip, port, DB명), username, password
+		String url = "jdbc:mysql://localhost:3306/bookstore";
+		String username = "root";
+		String password = "1234";
+		Connection con = DriverManager.getConnection(url, username, password);
+		System.out.println("2. bookstore DB 연결 성공!");
 
-			// 3.SQL문을 만든다.
-			String sql = "select bookname, writer, genre, price, sold from book order by sold desc";
-			PreparedStatement ps = con.prepareStatement(sql);
-			System.out.println("3. SQL문 생성 완료");
+		// 3.SQL문을 만든다.
+		String sql = "select bookname, writer, genre, price, sold from book order by sold desc";
+		PreparedStatement ps = con.prepareStatement(sql);
+		System.out.println("3. SQL문 생성 완료");
 
-			// 4.SQL문을 MySQL로 전송한다.
-			ResultSet rs = ps.executeQuery();
-			System.out.println("4. SQL문 전송 완료");
-			// System.out.println(rs.next()); // record 값이 있는지 확인, 한 번만 써야한다!!!!!!!!
+		// 4.SQL문을 MySQL로 전송한다.
+		ResultSet rs = ps.executeQuery();
+		System.out.println("4. SQL문 전송 완료");
+		// System.out.println(rs.next()); // record 값이 있는지 확인, 한 번만 써야한다!!!!!!!!
 
-			
-			ArrayList<String[]> result = new ArrayList<String[]>();
+		ArrayList<String[]> result = new ArrayList<String[]>();
+
+		switch (opt) {
+		case "도서명":
 			while (rs.next()) {
-				result.add(new String[] {rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)});
+				if (rs.getString(1).contains(keyword)) {
+					result.add(new String[] { rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
+							rs.getString(5) });
+				}
 			}
+			break;
+		case "저자":
+			while (rs.next()) {
+				if (rs.getString(2).contains(keyword)) {
+					result.add(new String[] { rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
+							rs.getString(5) });
+				}
+			}
+			break;
+		case "장르":
+			while (rs.next()) {
+				if (rs.getString(3).contains(keyword)) {
+					result.add(new String[] { rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
+							rs.getString(5) });
+				}
+			}
+			break;
+		}
 
-			return result;
-		}// end of 도서 검색
-	
+		return result;
+	}// end of 도서 검색
+
+	// 도서 가격 검색
+	public ArrayList<String[]> searchPrice() throws Exception {
+		// 1. JDBC connector 설정
+		Class.forName("com.mysql.jdbc.Driver");
+		System.out.println("1. connector 연결 성공!");
+
+		// 2. Java에서 DB로 연결. 필요한 정보: 연결할 주소 Url (ip, port, DB명), username, password
+		String url = "jdbc:mysql://localhost:3306/bookstore";
+		String username = "root";
+		String password = "1234";
+		Connection con = DriverManager.getConnection(url, username, password);
+		System.out.println("2. bookstore DB 연결 성공!");
+
+		// 3.SQL문을 만든다.
+		String sql = "select bookname, writer, genre, price, sold from book order by price desc";
+		PreparedStatement ps = con.prepareStatement(sql);
+		System.out.println("3. SQL문 생성 완료");
+
+		// 4.SQL문을 MySQL로 전송한다.
+		ResultSet rs = ps.executeQuery();
+		System.out.println("4. SQL문 전송 완료");
+		// System.out.println(rs.next()); // record 값이 있는지 확인, 한 번만 써야한다!!!!!!!!
+
+		ArrayList<String[]> result = new ArrayList<String[]>();
+		while (rs.next()) {
+			result.add(new String[] { rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
+					rs.getString(5) });
+		}
+
+		return result;
+	}// end of 도서 가격 검색
+
 	// 인기 도서
 	public String[][] tableRead() throws Exception {
 		// 1. JDBC connector 설정
@@ -130,15 +184,15 @@ public class BookDAO {
 		ResultSet rs = ps.executeQuery();
 		System.out.println("4. SQL문 전송 완료");
 
-		int[] result = {0,0,0,0};
+		int[] result = { 0, 0, 0, 0 };
 		while (rs.next()) {
-			if(rs.getString(1).equals("computer")) {
+			if (rs.getString(1).equals("computer")) {
 				result[0] += Integer.parseInt(rs.getString(2));
-			} else if(rs.getString(1).equals("business")) {
+			} else if (rs.getString(1).equals("business")) {
 				result[1] += Integer.parseInt(rs.getString(2));
-			} else if(rs.getString(1).equals("language")) {
+			} else if (rs.getString(1).equals("language")) {
 				result[2] += Integer.parseInt(rs.getString(2));
-			} else if(rs.getString(1).equals("novel")) {
+			} else if (rs.getString(1).equals("novel")) {
 				result[3] += Integer.parseInt(rs.getString(2));
 			}
 
