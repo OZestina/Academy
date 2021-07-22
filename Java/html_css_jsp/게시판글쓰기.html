@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form action="insert2.jsp">
+		<h1>게시판</h1>
+		<h3 style="color: pink">네 꿈을 펼쳐봐</h3>
+		<hr color="red">
+		제목: <input name="title" type="text"> <br> 글쓴이: <input
+			name="writer" type="text"> <br> 내용:
+		<textarea rows="10" cols="30" placeholder="여기에 입력해주세요" name="content"></textarea>
+		<br> 종류: <input type="radio" value="문의사항" name="type">문의사항
+
+		<input type="radio" value="답변" name="type">답변 <input
+			type="radio" value="확인" name="type">확인 <br> 부서: <select
+			name="department">
+			<option value="기획부">기획부
+			<option value="총무부">총무부
+			<option value="인사부">인사부
+		</select> <br> 날짜: <input name="date"> <br>
+		<button type="submit">글쓰기</button>
+	</form>
+
+	<audio src="Kalimba.mp3" controls="controls"></audio>
+	<br>
+	<video src="sample_video.mp4" controls="controls"></video>
+	<br>
+	<img alt="광고 이미지가 들어갈 자리" src="ozestina.jpg" width="300">
+	<br>
+	<br>
+
+	<h3>내가 공부하고 있는 과목들</h3>
+	<!-- <ul>: Unordered List -->
+	<ul type="circle">
+		<li>java</li>
+		<li>python</li>
+		<li>jsp</li>
+		<li>c++</li>
+	</ul>
+	<hr>
+	<!-- <ol>: Ordered List (1,2,3,4 ~)-->
+	<h3>내가 좋아하는 과일 목록</h3>
+	<ol type="I">
+		<li>오디</li>
+		<li>복숭아</li>
+		<li>무화과</li>
+		<li>딸기</li>
+	</ol>
+
+
+</body>
+</html>

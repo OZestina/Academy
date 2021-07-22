@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- 테이블은 <table> 사용 -->
+
+	<table border="1">
+		<!-- 2*2 배열로 생각! 행-열 순서 -->
+		<!-- 행 전체에 적용하는건 tr에 -->
+		<tr align="center">
+		 	<!-- 굵은 글씨는 th, 보통글씨는 td -->
+		 	<!-- 행 전체에 적용하는건 tr에, 각각은 각 셀에 설정 -->	
+			<th bgcolor="yellow" width="100" height="30">취미생활</th>
+			<th bgcolor="lime" width="100" height="30">취미금액</th>
+			<th bgcolor="pink" width="100" height="30">취미장소</th>
+		</tr>
+		<tr bgcolor="lightblue">
+			<td>달리기</td>
+			<td>1000</td>
+			<td>여의도 공원</td>
+		</tr>
+		<tr bgcolor="lightblue">
+			<td>등산</td>
+			<td>2000</td>
+			<td>관악산</td>
+		</tr>
+		<tr bgcolor="lightblue">
+			<td>독서</td>
+			<td>10000</td>
+			<td>강남역</td>
+		</tr>
+		<tr align="center">
+			<!-- n개의 셀을 통합해서 쓰겠다! -->
+			<td colspan="3">첫 페이지로</td>
+		</tr>
+	</table>
+
+</body>
+</html>
