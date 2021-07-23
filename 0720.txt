@@ -1,0 +1,25 @@
+0720
+
+-------------------------------------------------
+[Apache Tomcat]
+Apache Tomcat 접속 > Download > Tomcat 8.5 다운로드 (Installer 버전)
+
+실행 수 인터넷 창에서 접속 (http://localhost:8889/) 하면 서버에 접속할 수 있다
+
+C:\Program Files\Apache Software Foundation\Tomcat 8.5_Tomcat85\webapps\ROOT
+내의 index.jsp를 메모장으로 열어 첫 페이지 수정 가능!
+(<%@ page session="false" pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %> 부분은 남겨둡시다)
+-------------------------------------------------
+[Eclipse에서 Tomcat 연결]
+
+Preferences > Server > Runtime Environment
+
+
+-------------------------------------------------
+
+자바는 서버에서 실행
+Java Script는 브라우저에서 실행
+
+JSP (Java Server P...)
+자바도, 자바 스크립트도 쓸 수 있는 언어
+자바코드는 <% %> 사이에 작성
