@@ -31,6 +31,15 @@ if (id.equals(id1) && pw.equals(pw1)) {
 }
 %>
 
+<!-- 세션을 끊어주는 처리를 해야함 -->
+    <%
+    	//id세션만 제거하고자 하는 경우
+    	//session.removeAttribute("id");
+    	
+    	//잡힌 모든 세션을 제거하고자 하는 경우
+    	//session.invalidate();
+    %>
+
 <!DOCTYPE html>
 <html>
 <head>
