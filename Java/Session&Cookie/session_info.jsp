@@ -59,6 +59,8 @@ if (id.equals(id1) && pw.equals(pw1)) {
 	<!-- session이 잡혀있는지 아닌지 체크하고자 하는 경우 세션이 null인지를 체크하면 된다 -->
 	<%	if (session.getAttribute("id") != null) {	%>
 		세션 id값은:	<%=session.getAttribute("id")%>
+		<!-- 세션만 찍을 때는 이렇게 써도 됨! -->
+		전체 조회수: ${id}
 	<%	}	%>
 
 
