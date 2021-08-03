@@ -40,6 +40,10 @@ if (id.equals(id1) && pw.equals(pw1)) {
     	//session.invalidate();
     %>
 
+//response 객체: 서버가 클라이언트에게 특정 처리를 하라고 명령할 때 사용
+    	// <-> request: 클라이언트로부터 넘어온 데이터를 받을 때 사용
+    	//response.sendRedirect("session_로그인처리.jsp");
+
 <!DOCTYPE html>
 <html>
 <head>
