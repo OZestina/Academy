@@ -1,0 +1,46 @@
+
+1. JDBC 프로그래밍이란?
+- Java DB Connectivity, Java와 DB를 연결하는 프로그래밍
+
+
+2. Java와 DB를 연결할 때 필요한 부품은?
+- JDBC connector
+- mvn repository에서 다운받을 수 있다
+
+
+3. JDBC 4단계를 순서대로 써보세요
+- JDBC connector (driver) 설정
+- Java와 DB 연결: URL (ip, port, db명), id, pw 필요
+- SQL문 생성
+- SQL문을 MySQL로 전송 (DB서버로 전송)
+
+
+4. 메서드의 입력값을 전달할 목적으로 만드는 변수를 무엇이라고 하는가?
+- 매개변수, parameter(파라미터)
+
+
+5. 다음에서 틀린 것은? 이유는? 올바르게 고치시오.
+public void call2(){
+return 10;
+}
+- void, 혹은 return 10; 
+- 반환값이 없는 메서드인데 반환값이 있다
+- public int call2() { return 10; } 혹은 public void call2() { }
+
+
+6.Java에서 SQL문에 해당하는 부품(클래스)의 이름은?
+- prepareStatement
+
+
+7. void는 무슨 의미?
+- (반환)값 없음
+
+
+8. 다음은 왜 틀렸는가?
+String result = a.call();
+public void call(){
+System.out.println("hello");
+}
+- 1) call을 부르는 a가 정의되지 않음
+- 2) 반환값이 없는 메서드(call)를 변수(result)에 저장하려함
+- 3) 메서드가 정의되기 전에 호출(a.call())됨
