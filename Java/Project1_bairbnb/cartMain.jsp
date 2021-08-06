@@ -1,4 +1,4 @@
-<!-- 2021.07.28 updated -->
+<!-- 2021.08.06 updated -->
 <!-- 스케줄러(장바구니) 메인 페이지 -->
 
 <%@page import="java.util.ArrayList"%>
