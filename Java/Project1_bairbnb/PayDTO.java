@@ -7,17 +7,17 @@ public class PayDTO {
 
 	private int payid;
 	private String paydate;		//YYYY-MM-DD
-	private String buyerid;
+	private String memid;
 	private int proid;
 	private String checkin;	//YYYY-MM-DD 
 	private String checkout;	//YYYY-MM-DD
 	private int payprice;
 	
-	public PayDTO(int payid, String paydate, String buyerid, int proid, 
+	public PayDTO(int payid, String paydate, String memid, int proid, 
 			String checkin, String checkout, int payprice) {
 		this.payid = payid;
 		this.paydate = paydate;
-		this.buyerid = buyerid;
+		this.memid = memid;
 		this.proid = proid;
 		this.checkin = checkin;
 		this.checkout = checkout;
@@ -40,12 +40,12 @@ public class PayDTO {
 		this.paydate = paydate;
 	}
 
-	public String getBuyerid() {
-		return buyerid;
+	public String getMemid() {
+		return memid;
 	}
 
-	public void setBuyerid(String buyerid) {
-		this.buyerid = buyerid;
+	public void setMemid(String memid) {
+		this.memid = memid;
 	}
 
 	public int getProid() {
@@ -82,7 +82,7 @@ public class PayDTO {
 
 	@Override
 	public String toString() {
-		return "PayDTO [payid=" + payid + ", paydate=" + paydate + ", buyerid=" + buyerid + ", proid=" + proid
+		return "PayDTO [payid=" + payid + ", paydate=" + paydate + ", memid=" + memid + ", proid=" + proid
 				+ ", checkin=" + checkin + ", checkout=" + checkout + ", payprice=" + payprice + "]";
 	}
 	
