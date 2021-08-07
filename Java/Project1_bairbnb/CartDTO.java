@@ -1,51 +1,42 @@
 // 2021.07.28 updated
-// getter & setter 정리 예정
+// setter&getter 정리 필요
 
-package pay;
+package cart;
 
-public class PayDTO {
-
-	private int payid;
-	private String paydate;		//YYYY-MM-DD
+public class CartDTO {
+	
+	private int cartidx;
 	private String memid;
 	private int proid;
-	private String checkin;	//YYYY-MM-DD 
-	private String checkout;	//YYYY-MM-DD
-	private int payprice;
+	private String ccheckin;	//YYYY-MM-DD 
+	private String ccheckout;	//YYYY-MM-DD
+	private int cartprice;
 	
-	public PayDTO(int payid, String paydate, String memid, int proid, 
-			String checkin, String checkout, int payprice) {
-		this.payid = payid;
-		this.paydate = paydate;
+	//장바구니 create
+	public CartDTO(String memid, int proid, String ccheckin, String ccheckout, int cartprice) {
 		this.memid = memid;
 		this.proid = proid;
-		this.checkin = checkin;
-		this.checkout = checkout;
-		this.payprice = payprice;
+		this.ccheckin = ccheckin;
+		this.ccheckout = ccheckout;
+		this.cartprice = cartprice;
 	}
-
-	public int getPayid() {
-		return payid;
+	
+	//장바구니 read&update*delete
+	public CartDTO(int cartidx, String memid, int proid, String ccheckin, String ccheckout, int cartprice) {
+		this.cartidx = cartidx;
+		this.memid = memid;
+		this.proid = proid;
+		this.ccheckin = ccheckin;
+		this.ccheckout = ccheckout;
+		this.cartprice = cartprice;
 	}
-
-	public void setPayid(int payid) {
-		this.payid = payid;
+	
+	public int getCartidx() {
+		return cartidx;
 	}
-
-	public String getPaydate() {
-		return paydate;
-	}
-
-	public void setPaydate(String paydate) {
-		this.paydate = paydate;
-	}
-
+	
 	public String getMemid() {
 		return memid;
-	}
-
-	public void setMemid(String memid) {
-		this.memid = memid;
 	}
 
 	public int getProid() {
@@ -56,35 +47,35 @@ public class PayDTO {
 		this.proid = proid;
 	}
 
-	public String getCheckin() {
-		return checkin;
+	public String getCcheckin() {
+		return ccheckin;
 	}
 
-	public void setCheckin(String checkin) {
-		this.checkin = checkin;
+	public void setCcheckin(String ccheckin) {
+		this.ccheckin = ccheckin;
 	}
 
-	public String getCheckout() {
-		return checkout;
+	public String getCcheckout() {
+		return ccheckout;
 	}
 
-	public void setCheckout(String checkout) {
-		this.checkout = checkout;
+	public void setCcheckout(String ccheckout) {
+		this.ccheckout = ccheckout;
 	}
 
-	public int getPayprice() {
-		return payprice;
+	public int getCartprice() {
+		return cartprice;
 	}
 
-	public void setPayprice(int payprice) {
-		this.payprice = payprice;
+	public void setCartprice(int cartprice) {
+		this.cartprice = cartprice;
 	}
 
 	@Override
 	public String toString() {
-		return "PayDTO [payid=" + payid + ", paydate=" + paydate + ", memid=" + memid + ", proid=" + proid
-				+ ", checkin=" + checkin + ", checkout=" + checkout + ", payprice=" + payprice + "]";
+		return "CartDTO [cartidx=" + cartidx + ", memid=" + memid + ", proid=" + proid + ", ccheckin=" + ccheckin
+				+ ", ccheckout=" + ccheckout + ", cartprice=" + cartprice + "]";
 	}
-	
+
 	
 }
