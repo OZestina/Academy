@@ -26,10 +26,6 @@
 	CartDAO dao = new CartDAO();
 	dao.cartCreate(cart);
 	
-	
-	//체크인,체크아웃 - 일수 계산
-
-	
 
    	%>
     
