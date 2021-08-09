@@ -1,23 +1,32 @@
-<!-- 2021.08.03 updated -->
-<!-- 장바구니에서 개별 목록 삭제를 위한 삭제 jsp -->
-<!-- DB작업 마친 후 cartMain으로 자동 다이렉트 -->
+<!-- Updated 2021.08.09 오전 10:20 -->
 
 <%@page import="cart.CartDAO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
 
 String[] cartidxList = request.getParameterValues("cartidx");
+String[] cartidxList2 = request.getParameterValues("cartidx2");
+
 CartDAO dao = new CartDAO();
 
-//int totalDelete = 0;
-for (int i = 0; i < cartidxList.length; i++) {
-	int resultInt = dao.cartDelete(Integer.parseInt(cartidxList[i]));
-	//totalDelete++;
+// int totalDelete = 0;
+if(cartidxList != null){
+	for (int i = 0; i < cartidxList.length; i++) {
+		int resultInt = dao.cartDelete(Integer.parseInt(cartidxList[i]));
+// 		totalDelete++;
+	}
+}
+if(cartidxList2 != null){
+	for (int i = 0; i < cartidxList2.length; i++) {
+		int resultInt = dao.cartDelete(Integer.parseInt(cartidxList2[i]));
+// 		totalDelete++;
+	}
 }
 
 // String result = "삭제실패";
-// if (totalDelete > 0) {
+// if (totalDelete == (cartidxList.length+cartidxList2.length)) {
 // 	result = "삭제 성공";
 // }
 // System.out.println(result);
