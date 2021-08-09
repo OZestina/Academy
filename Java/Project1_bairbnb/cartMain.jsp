@@ -1,5 +1,4 @@
-<!-- 2021.08.05 updated -->
-<!-- 스케줄러(장바구니) 메인 페이지 -->
+<!-- Updated 2021.08.09 오전 10:20 -->
 
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Date"%>
@@ -47,7 +46,15 @@ for (int i = 0; i < cartList.size(); i++) {
 	href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
 <script type="text/javascript">
 	function check(){
-		//체크박스 체크 되었는 지 확인, 체크된 숙소 cartidx 배열 저장
+		//체크박스 체크 되었는 지 확인, soldout 숙소가 체크됐는지 확인,
+		//결제가능한 체크된 숙소 cartidx 배열 저장
+		var checked2 = document.getElementsByName('cartidx2');
+		for (var i = 0; i<checked2.length; i++){
+			if(checked2[i].checked){
+				alert("예약할 수 없는 숙소가 있습니다.\n구매하실 숙소를 다시 확인해주세요.");
+				return false;
+			}
+		}
 		var checked = document.getElementsByName('cartidx');
 		var check = false;
 		for (var i = 0; i<checked.length; i++){
@@ -71,9 +78,16 @@ for (int i = 0; i < cartList.size(); i++) {
 	
 	function deleteCheck() {
 		var checked = document.getElementsByName('cartidx');
+		var checked2 = document.getElementsByName('cartidx2');
 		var check = false;
 		for (var i = 0; i<checked.length; i++){
 			if(checked[i].checked){
+				check = true;
+				break;
+			}
+		}
+		for (var i = 0; i<checked2.length; i++){
+			if(checked2[i].checked){
 				check = true;
 				break;
 			}
@@ -154,7 +168,6 @@ for (int i = 0; i < cartList.size(); i++) {
 						}
 					}
 					
-					
 					if(available == true){ %>
 				<tr>
 					<td class="info"><input type="checkbox" name="cartidx"
@@ -173,7 +186,7 @@ for (int i = 0; i < cartList.size(); i++) {
 					
 					<% } else{ %>
 				<tr>
-					<td class="info2"><input type="checkbox" name="cartidx"
+					<td class="info2"><input type="checkbox" name="cartidx2"
 						value=<%=cartList.get(i).getCartidx()%>></td>
 					<td class="info2"><%=i + 1%></td>
 					<%
@@ -202,7 +215,7 @@ for (int i = 0; i < cartList.size(); i++) {
 			</table>
 			<div class="buttons">
 				<button type="submit" onclick="return deleteCheck();" formaction="cartDelete.jsp" class="b1">선택 숙소 삭제</button>
-				<button type="submit" onclick="return dateCheck();" formaction="payCreate.jsp" class="b2">선택 숙소 결제</button>
+				<button type="submit" onclick="return check();" formaction="payCreate.jsp" class="b2">선택 숙소 결제</button>
 			</div>
 		</form>
 		</div>
