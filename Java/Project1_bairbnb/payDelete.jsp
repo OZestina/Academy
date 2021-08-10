@@ -1,6 +1,5 @@
-<!-- 2021.08.03 updated -->
-<!-- 결제 후 주문 취소를 위한 삭제 jsp -->
-<!-- DB작업 마친 후 payMain으로 자동 다이렉트 -->
+<!-- Updated 2021.08.10 12:00 -->
+<!-- Updated 2021.08.09 오전 10:20 -->
 
 <%@page import="pay.PayDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -14,7 +13,7 @@
 				int resultInt = dao.payDelete(Integer.parseInt(payidList[i]));
 			}
 		}
+	response.sendRedirect("payMain.jsp");
 		
    	%>
     
-<jsp:forward page="payMain.jsp"></jsp:forward>
