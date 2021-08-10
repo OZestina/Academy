@@ -1,6 +1,5 @@
-<!-- 2021.08.03 updated -->
-<!-- 스케줄러(장바구니) 생성 jsp -->
-<!-- DB작업 마친 후 cartMain으로 자동 다이렉트 -->
+<!-- Updated 2021.08.10 12:00 -->
+<!-- Updated 2021.08.09 오전 10:20 -->
 
 <%@page import="cart.CartDTO"%>
 <%@page import="cart.CartDAO"%>
@@ -26,9 +25,8 @@
 	CartDAO dao = new CartDAO();
 	dao.cartCreate(cart);
 	
-
+	//상세페이지로 이동하도록 링크 변경
+	response.sendRedirect("cartMain.jsp");
    	%>
     
     
-<!-- 상세페이지로 이동하도록 링크 변경 -->
-<jsp:forward page="cartMain.jsp"></jsp:forward>
