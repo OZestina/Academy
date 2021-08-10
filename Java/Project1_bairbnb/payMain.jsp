@@ -1,6 +1,5 @@
-<!-- 2021.08.05 updated -->
-<!-- 결제 메인 페이지 -->
-
+<!-- Updated 2021.08.10 12:00 -->
+<!-- Updated 2021.08.09 오전 10:20 -->
 
 <%@page import="pay.PayDTO"%>
 <%@page import="pay.PayDAO"%>
