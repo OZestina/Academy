@@ -1,5 +1,4 @@
-// 2021.08.06 updated
-// update없음
+// Updated 2021.08.09 오전 10:20
 
 package pay;
 
@@ -19,14 +18,17 @@ public class PayDAO {
 	public PayDAO() {
 
 		try {
-			//Class.forName("com.mysql.cj.jdbc.Driver");	//mac
+//			Class.forName("com.mysql.cj.jdbc.Driver");	//mac
 			Class.forName("com.mysql.jdbc.Driver");			//window
 			
 			String url = "jdbc:mysql://localhost:3306/bairbnb";
-			String username = "root";
-			String password = "1234";						//주현
-			//String password = "cnzk0531";					//혜윤
-			con = DriverManager.getConnection(url, username, password);
+			//String url = "jdbc:mysql://localhost:3306/bairbnb?useUnicode=true&characterEncoding=utf8"; //순선
+			String user = "root";
+			
+			String password = "1234";						//주현,순선,이랑
+//			String password = "cnzk0531";					//혜윤
+			//String password = "atempause26"; 				//성민
+			con = DriverManager.getConnection(url, user, password);
 			System.out.println("2. BAIRBNB db연결 성공!!!");
 		} catch (ClassNotFoundException e) {
 			System.out.println("1번에러>> 드라이버없음");
@@ -109,8 +111,8 @@ public class PayDAO {
 			System.out.println("4. sql문 전송 전송");
 
 			while (rs.next()) {
-				result.add(new PayDTO(rs.getInt(1), rs.getString(2), memid, rs.getInt(4), rs.getString(5),
-						rs.getString(6), rs.getInt(7)));
+				result.add(new PayDTO(rs.getInt("payid"), rs.getString("paydate"), rs.getString("memid"), 
+						rs.getInt("proid"), rs.getString("checkin"),rs.getString("checkout"), rs.getInt("payprice")));
 			}
 		} catch (SQLException e) {
 			System.out.println("2~4번에러>> DB관련 에러");
@@ -151,7 +153,7 @@ public class PayDAO {
 
 		try {
 			// 3. sql문을 만든다.
-			String sql = "select checkin, checkout from pay where "+proids+" order by paydate desc";
+			String sql = "select * from pay where "+proids+" order by paydate desc";
 			PreparedStatement ps = con.prepareStatement(sql);
 			
 			System.out.println("3. SQL문 생성 완료");
@@ -161,8 +163,8 @@ public class PayDAO {
 			System.out.println("4. sql문 전송 전송");
 
 			while (rs.next()) {
-				result.add(new PayDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5),
-						rs.getString(6), rs.getInt(7)));
+				result.add(new PayDTO(rs.getInt("payid"), rs.getString("paydate"), rs.getString("memid"), 
+						rs.getInt("proid"), rs.getString("checkin"),rs.getString("checkout"), rs.getInt("payprice")));
 			}
 		} catch (SQLException e) {
 			System.out.println("2~4번에러>> DB관련 에러");
