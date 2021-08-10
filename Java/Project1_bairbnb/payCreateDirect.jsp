@@ -1,6 +1,5 @@
-<!-- 2021.08.05 updated -->
-<!-- 결제 jsp -->
-<!-- 결제 작업 마친 후 payMain으로 자동 다이렉트 -->
+<!-- Updated 2021.08.10 12:00 -->
+<!-- Updated 2021.08.09 오전 10:20 -->
 
 <%@page import="cart.CartDAO"%>
 <%@page import="cart.CartDTO"%>
@@ -40,16 +39,17 @@ String pronam = pro.read(proid).getPronam();
 <meta charset="UTF-8">
 <title>베어비앤비: 결제하기</title>
 <!-- 아래는 css 링크 -->
-<link rel="stylesheet" href="css/board.css">
+<link rel="stylesheet" href="css/cart.css">
 <!-- 아래는 폰트 링크 -->
 <!-- css에서
 	font-family: 'Noto Sans KR', sans-serif;
 	font-size : 사이즈pt; (eg. 15pt;)
 	font-weight : 300 / 400 / 500 골라서 넣으면 돼요 (500이 가장 굵은 거)
  -->
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/57a2eb66e4.js"></script>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
 <!-- jQuery -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <!-- iamport.payment.js -->
@@ -80,19 +80,13 @@ function pay() {
 			msg += '상점 거래ID : ' + rsp.merchant_uid;
 			msg += '결제 금액 : ' + rsp.paid_amount;
 			msg += '카드 승인번호 : ' + rsp.apply_num;
-						
-			//결제 성공 시 DB 작업
-			<%
-			PayDAO dao = new PayDAO();
-			dao.payCreate(memid, proid, checkin, checkout, payprice);
-			%>
-			//DB작업 후 payMain.jsp(결제내역확인) 페이지로 이동						
-			location.href = "payMain.jsp";
+			return true;
 			
 		} else {
 			var msg = '결제에 실패하였습니다.';
 			msg += '에러내용 : ' + rsp.error_msg;
 			alert(msg);
+			return false;
 		}
 	});
 }
@@ -113,7 +107,6 @@ function pay() {
 		<table>
 		<tr class="header_tr">
 			<td class="header">#</td>
-			<td class="header">숙소ID</td> 
 			<td class="header" width="50%">숙소명</td> 
 			<td class="header">체크인</td>
 			<td class="header">체크아웃</td>
@@ -122,20 +115,26 @@ function pay() {
 
 		<tr>
 			<td class="info">1</td>
-			<td class="info"><%=proid%></td>
 			<td class="info"><%=pronam%></td>
 			<td class="info"><%=checkin%></td>
 			<td class="info"><%=checkout%></td>
 			<td class="info"><%=payprice%></td>
 		</tr>
 
-		<tr>
-			<td colspan='5' style="text-align: center">총 가격</td>
-			<td style="text-align: right;"><%=payprice%></td>
+		<tr class="total_tr">
+			<td colspan='4' class="header" style="text-align: right">총 가격</td>
+			<td class="total"><%=payprice%> 원</td>
 		</tr>
 		</table>
+		<input type="hidden" id="hidden" name="proid" value="<%=proid%>">
+		<input type="hidden" id="hidden" name="checkin" value="<%=checkin%>">
+		<input type="hidden" id="hidden" name="checkout" value="<%=checkout%>">
+		<input type="hidden" id="hidden" name="payprice" value="<%=payprice%>">
+		
 		<br>
-		<button onclick = "pay()">숙소 결제하기</button>
+		<div class="buttons">
+		<button class = 'b2' onclick = "return pay();" formaction = "payCreateDirectDB.jsp">숙소 결제하기</button>
+		</div>
 		<br>
 		</div>
 		
