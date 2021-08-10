@@ -1,3 +1,4 @@
+<!-- Updated 2021.08.10 12:00 -->
 <!-- Updated 2021.08.09 오전 10:20 -->
 
 <%@page import="cart.CartDAO"%>
@@ -30,6 +31,5 @@ if(cartidxList2 != null){
 // 	result = "삭제 성공";
 // }
 // System.out.println(result);
+response.sendRedirect("cartMain.jsp");
 %>
-
-<jsp:forward page="cartMain.jsp"></jsp:forward>
