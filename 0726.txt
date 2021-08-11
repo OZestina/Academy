@@ -1,0 +1,14 @@
+객체 지향형 프로그램 (Object Oriented Program, OOP)
+
+반드시 필요한 부품 두가지
+1) DAO (Data Access Object): CRUD 구현
+2) DTO (Data Transfer Object): 전달할 가방 역할, VO (value object) 값만 가지고 있다
+
+webapp>web-inf>lib>하단에 (mysql) connector 추가
+
+
+
+> UI(jsp)
+> DTO class
+> DAO class 생성, CTO클래스로 만든 정보를 입력값으로 메서드 호출
+> UI(jsp)로 돌아와 html로 화면 표시

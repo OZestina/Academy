@@ -1,0 +1,27 @@
+json: javascript object notation
+> java의 map, python의 dictionary와 동일한 (key: value) 자료의 형태
+> 키		: 값
+> 메타데이터	: 핵심데이터
+> 메타:보조,부가적인
+
+html의 tag가 메타데이터의 역할을 했으나, 태그가 적고 화면구성 태그 위주여서 한계가 있었음
+> xml의 탄생
+> xml : eXtensible markup language (확장가능한 ML)
+> <name>hong</name>, <age>100</age> 등 태그를 만들어서 쓸 수 있다
+
+> json이 더 쓰기 편해서 요즘은 json이 대세
+
+-------------------------------------
+
+csv : comma seperated value
+
+----------------------------------------
+
+js 자동완성: tern plug-in
+
+----------------------------------------
+script에 외부 서버의 네트워크주소를 삽입하는 것을 cdn 방식이라고 한다
+주소 앞에 cdn을 붙여준다
+cdn: content delivery network
+
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>

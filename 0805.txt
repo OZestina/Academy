@@ -1,0 +1,31 @@
+DOM: Document Object Model
+DOM tree 구조: html, xml 등의 포함관계를 가지고 있는 문서를 RAM에 그 포함관계를 tree의 node(마디) 객체로 여기고 tree 구조로 읽어들이는 방법
+
+
+개발자도구
+> copy
+	> copy selector
+	#result2 > ul
+	> XPath : 위치, 패스, 경로 정보. 크롤링에 사용 가능
+	//*[@id="result2"]/ul
+
+
+
+============================
+JQuery
+: js를 더 쉽게 쓸 수 있도록 만든 것
+
+> download
+	> compressed : ugly버전
+	> uncompressed: prettty버전(코드 읽기 좋은)
+	> slim build : 기본 JQuery기능만 구현 가능한 버전 (Ajax 지원 노노해)
+
+> cdn(content delivery network)로 해보자~
+	> min (jquery.min.js): 메모리를 잡아먹는 엔터 등의 빈칸을 모두 없애 용량을 줄인 ugly한 버전
+
+
+
+//$:document
+//$(): body태그 안을 먼저 램에 dom tree로 읽어들여라(loading)
+//$(function() {}): body를 다 읽어들인 후, 입력값으로 넣은 이름업슨 함수 부분을 실행해주세요
+//기본 선택자(tag, id, class), selector
