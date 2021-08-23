@@ -1,0 +1,20 @@
+1) 이클립스 market place에서 spring 프레임워크 다운로드
+2) perspective 중 spring 선택
+
+<생성단계>
+Wizard에서 Spring Legacy Project 선택
+
+프로젝트명 입력
+Templages에서 Spring MVC 프로젝트 선택
+
+프로젝트 패키지명 입력(.으로 구분된 최소 3단계의 패키지명 필요)
+
+pom.xml에서 기본 설정 및 필요한 파일을 자동 다운로드하도록 설정할 수 있음(띄어쓰기 하지 말기!)
+- 자바 1.8버전
+- springframework 5.0.1
+- 추가 다운로드 링크는 dependencies 태그 내 추가 (다운로드 링크는 mvn, gradle에서 가져온다)
+
+<작업 파일 생성>
+webapp : 클라이언트가 요청하는 jsp 저장
+webapp> WEB_INF> views: 서버가 요청하는 jsp 저장 (Controller 실행 후 이동하는 jsp
+src/main/java> 생성한패키지 내: HomeController를 포함한 java 파일 저장
