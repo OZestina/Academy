@@ -1,0 +1,20 @@
+0.MVC는 어떤 방법론인가?
+- Model(방법파일, DAO), View(화면 출력), Controller(제어부)를 분리하여 개발하는 방법
+
+1.MVC1 과 MVC2
+- MVC1은 M,V,C가 덜 분리됨
+- MVC2는 M,V,C가 잘 분리됨
+
+2.MVC는 무엇의 약자인가
+- Model-View-Controller
+
+3.Spring 을 왜사용하는가?
+- MVC를 더 쉽게 구현하기 위해서
+
+4.Spring 같은 개발시 프레임을 제공하는 프로그램을 무엇이라고 하는가?
+- 프레임워크(Framework)
+
+5.당신이 아는 프레임워크는 ?
+-자바 : spring -> MVC2
+-c++ : .net(닷넷, 유료임) -> MVC2
+-Python : DJango(장고) -> MVT(MVC2와 같지만 파이썬에서 사용하는 용어)
