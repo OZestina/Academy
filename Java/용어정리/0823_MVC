@@ -18,3 +18,12 @@
 -자바 : spring -> MVC2
 -c++ : .net(닷넷, 유료임) -> MVC2
 -Python : DJango(장고) -> MVT(MVC2와 같지만 파이썬에서 사용하는 용어)
+
+6. view역할을 하는 파일의 위치 2곳과 차이
+- webapp, views (webapp>WEB-INF>views)
+- webapp: 클라이언트가 브라우저로 요청할 수 있는 jsp 파일을 놓는 곳
+          (a태그, form action 링크, location.href) => We
+- views: mvc2로 하려면 Controller, Model, View를 완벽하게 분리시켜야 함.
+          입력한 값을 서버로 전달하면 Controller로 받아서 dto 등으로 만들어 넣은 후, DB 처리를 하게 됨
+          Controller는 자바파일로 상속받아서 만들어준다.
+          Controller에서 처리한 결과를 서버가 클라이언트에게 보여주고자 서버가 호출하는 jsp파일을 저장하는 곳 (서버의 jsp파일임)
