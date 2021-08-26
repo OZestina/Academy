@@ -1,0 +1,25 @@
+AWS: 인스턴스 생성 > 프리티어 체크 > 사용할 서버 선택
+  처음에는 pem key 생성하는 것으로,
+  그 다음에는 기존 키 그대로 사용 가능!
+> 인스턴스 보기 창에서 서버 시작/중지/종료 선택 가능
+> aws 인스턴스에 연결 버튼을 누르고 -> SSH클라이언트 퍼블릭 DNS 복사하여 하기 프로그램들에 사용
+
+
+리눅스 원격 연결 할 때 필요한 파일
+1) puTTY: 원격 조정
+2) Winscp: 리눅스 scp 프로그램(네트워크로 파일 전송하는 프로그램)의 윈도우버전
+
+
+<PuTTY>
+PuTTYgen: aws에서 받은 pem 키로 putty 버전 암호화파일 만들자
+PuTTY (configuration)
+> connection >SSH > Auth 선택, Authentication paramenters에서 private key file (Browse...)에서 만든 putty키 
+> session 선택, Host Name (or IP address)에 aws에서 가져온 SSH클라이언트 퍼블릭 DNS 주소 입력
+
+
+<Winscp>
+Winscp: 리눅스 scp 프로그램(네트워크로 파일 전송하는 프로그램)의 윈도우버전
+새사이트 선택,
+> 호스트 이름: aws에서 가져온 SSH클라이언트 퍼블릭 DNS 주소 입력
+> 사용자 이름: ununtu
+> 고급 > SHH > 인증 > 개인키파일에 putty key 파일 선택
