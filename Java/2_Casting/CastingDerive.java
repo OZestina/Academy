@@ -13,9 +13,9 @@ public class CastingDerive {
 		
 		//클래스 간의 크기는 개념을 가지고 큰 지/작은 지를 판별
 		
-		s = b;			//자동형변환: 큰 <--- 작
-		//b = s;		//불가능
-		b = (BPPen)s;	//강제형변환: 작 <--- 큰
+		s = b;		//자동형변환, Up casting(업캐스팅): 큰 <--- 작
+		//b = s;	//불가능
+		b = (BPPen)s;	//강제형변환, Down casting(다운캐스팅): 작 <--- 큰
 	}
 
 }
