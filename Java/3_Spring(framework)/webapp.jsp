@@ -20,5 +20,18 @@
 날짜: <input type="date" name="date"><br>
 <button>상품 등록</button>
 </form>
+    
+<form action="bbs.mega">
+번호: <input name="bNo"><br>
+제목: <input name="title"><br>
+내용: <input name="content"><br>
+작성자: <input name="writer"><br>
+작성자: <input type = "date" name="date"><br>
+<button>글쓰기</button>
+</form>
+    
+<!-- 하기와 같이 해도 controller 클래스 중 bbs.mega 매핑된 메서드로 이동 & 데이터 전달 -->
+<a href="bbs.mega?bNo=100&title=test&content=test&writer=test&date=20210827">게시판 신청 완료2</a>
+
 </body>
 </html>
