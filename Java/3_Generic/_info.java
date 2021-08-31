@@ -28,3 +28,36 @@ public class CarUse {
 		System.out.println(car2);	//Car [size=100]
 	}
 }
+
+
+//여러개도 사용 가능하다
+public class Truck<T,P> {
+	T weight;
+	P distance;
+	
+	@Override
+	public String toString() {
+		return "Truck [weight=" + weight + ", distance=" + distance + "]";
+	}
+}
+
+
+public class TruckUse {
+
+	public static void main(String[] args) {
+		
+		Truck<String, Integer> t1 = new Truck<String, Integer>();
+		Truck<Integer, String> t2 = new Truck<>();
+		
+		t1.weight = "중량무게";
+		t1.distance = 100;
+		
+		t2.weight = 1000;
+		t2.distance = "장거리";
+		
+		System.out.println(t1);	//Truck [weight=중량무게, distance=100]
+		System.out.println(t2); /Truck [weight=1000, distance=장거리]
+
+	}
+
+}
