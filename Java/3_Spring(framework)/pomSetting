@@ -1,4 +1,9 @@
 1) dependencies 추가 내용
+	- MySQL connector	//SQL 연결용
+	- common-dbcp		//DBCP 사용위해
+	- spring-jdbc		//mybatis 연결용 spring
+	- mybatis		//mybatis
+	- mybatis-spring	//mybatis와 spring 연결
 2) oracle 파일 생성 및 추가 내용
 	- repository 및 다운로드 링크 추가 (repository는 꼭 dependencies 위에 있어야함)
 	- 생성된 링크에 oracle.jar 추가 (C:\Users\사용자\.m2\repository\com\oracle\ojdbc6\11.2.0.3)
