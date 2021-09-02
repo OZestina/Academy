@@ -1,0 +1,25 @@
+1. context파일의 역할
+- 스프링 시작할 때 싱글톤 객체를 만들어 달라고 정의하는 파일
+
+2. context파일의 위치
+- src/main/resources
+
+3. context파일에 싱글톤으로 정의할 때 사용하는 문법은
+<bean id="" class=""></bean>
+- id의 이름으로 class에 있는 파일(객체)을 싱글톤으로 만들어주세요 의 의미
+
+4. back-end file의 주요 파일은? 위치는?
+- 주요 파일: DAO, DTO, Controller
+- 주요 위치: src/main/java
+
+5. back-end file의 주요 파일 이외의 파일은? 위치는?
+- 파일: context
+- 위치: src/main/resources
+
+6. front-end file의 주요 파일은? 위치는?
+- 주요 파일: jsp
+- 주요 위치: src/main/webapp
+
+7. front-end file의 주요 파일 이외의 파일은? 위치는?
+- 파일: css, image, js, text
+- 위치: src/main/webapp/resources
