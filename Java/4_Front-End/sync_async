@@ -1,0 +1,7 @@
+동기식통신(synchornous)
+: 순서가 있게 다음페이지를 요청하고 다음페이지를 응답받는 방식, 페이지가 넘어감
+=> a href, form action
+
+<-> 비동기식 통신 (asynchornous)
+: 순서의 의미가 없고, 통신하고 싶을 때 요청하고 응답하는 방식, 페이지가 넘어가지 않음
+=> javascript(jquery) => Asynchronous JavaScript and XML(Ajax, 에이작스)
