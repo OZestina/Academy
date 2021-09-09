@@ -25,7 +25,7 @@
   - 자바의 해시맵, 파이썬의 딕셔너리와 동일한 자료형태
 
 8. ajax함수의 JSON형태에서 주로 사용되는 필수 키 3가지는?
-  - url, data, success, (fail)
+  - url, data, success
 
 9. ajax함수의 JSON형태에서 주로 사용되는 필수 키 중 data키는 어떤 역할인가?
   - url로 data를 전달하는 역할
