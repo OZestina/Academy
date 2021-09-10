@@ -84,3 +84,17 @@ select userName from user;
 | kdh      |
 | win      |
 +----------+
+
+
+//특정 값 제외하고 검색 (검색대상 컬럼에서 null값 가진 데이터도 제외됨)
+SELECT userID, userName FROM user where userId NOT IN('apple');
++--------+----------+
+| userID | userName |
++--------+----------+
+| hong   | win      |
+| jeon   | win      |
+| kim    | kdh      |
+| song   | win      |
++--------+----------+
+SELECT userID, userName FROM user where (userID, userName) NOT IN(select 'hong','win');
+  > 항목이 모두 해당되는 데이터만 제외됨
