@@ -19,7 +19,7 @@ Enter password: ****
 //SQL문 고오급
 
 
-테이블 애칭 설정 (member => m)
+//테이블 애칭 설정 (member => m)
 select m.id from member m;
 +-------+
 | id    |
@@ -28,7 +28,7 @@ select m.id from member m;
 | test  |
 +-------+
 
-컬럼명 바꿔서 출력하기
+//컬럼명 바꿔서 출력하기
 select m.id as result from member m;
 +--------+
 | result |
@@ -37,6 +37,50 @@ select m.id as result from member m;
 | test   |
 +--------+
 
-테이블에 입력하는 값 value 전달 순서 및 전달 안하는 것 null 처리
+//테이블에 입력하는 값 value 전달 순서 및 전달 안하는 것 null 처리
 insert into user(userPw, userId) values ('2222','jeon');
 
+//정렬 (order by 오름차순 asc, 내림차순 desc)
+select * from user order by userPw desc;
++--------+--------+----------+---------+----------+---------+--------+
+| userId | userPw | userName | userTel | userAddr | userAge | postNo |
++--------+--------+----------+---------+----------+---------+--------+
+| hong   | 4444   | win      | NULL    | NULL     |    NULL |        |
+| song   | 3333   | win      | NULL    | NULL     |    NULL |        |
+| jeon   | 2222   | win      | NULL    | NULL     |    NULL |        |
+| apple  | 1234   | NULL     | NULL    | NULL     |     200 |        |
+| kim    | 1111   | kdh      | 010     | seoul    |     100 | NULL   |
++--------+--------+----------+---------+----------+---------+--------+
+
+select * from user order by userPw asc;
++--------+--------+----------+---------+----------+---------+--------+
+| userId | userPw | userName | userTel | userAddr | userAge | postNo |
++--------+--------+----------+---------+----------+---------+--------+
+| kim    | 1111   | kdh      | 010     | seoul    |     100 | NULL   |
+| apple  | 1234   | NULL     | NULL    | NULL     |     200 |        |
+| jeon   | 2222   | win      | NULL    | NULL     |    NULL |        |
+| song   | 3333   | win      | NULL    | NULL     |    NULL |        |
+| hong   | 4444   | win      | NULL    | NULL     |    NULL |        |
++--------+--------+----------+---------+----------+---------+--------+
+
+
+//중복값 제거하고 출력
+select distinct userName from user;
++----------+
+| userName |
++----------+
+| win      |
+| NULL     |
+| kdh      |
++----------+
+
+select userName from user;
++----------+
+| userName |
++----------+
+| win      |
+| NULL     |
+| win      |
+| kdh      |
+| win      |
++----------+
