@@ -1,0 +1,42 @@
+cmd에서 MySQL 실행
+
+//MySQL 실행파일(mysql.exe)이 있는 곳으로 이동
+C:\Users\tjoeun709>cd C:\Program Files\MySQL\MySQL Server 5.5\bin
+C:\Program Files\MySQL\MySQL Server 5.5\bin>
+
+//실행파일(mysql) + 호스트, 포트, 유저명, 패스워드 입력
+C:\Program Files\MySQL\MySQL Server 5.5\bin>mysql -h localhost -P 3306 -u root -p
+Enter password: ****
+
+//호스트와 포트가 기본값 (localhost, 3306)이면 생략 가능하다
+C:\Program Files\MySQL\MySQL Server 5.5\bin>mysql -u root -p
+Enter password: ****
+
+
+
+
+
+//SQL문 고오급
+
+
+테이블 애칭 설정 (member => m)
+select m.id from member m;
++-------+
+| id    |
++-------+
+| apple |
+| test  |
++-------+
+
+컬럼명 바꿔서 출력하기
+select m.id as result from member m;
++--------+
+| result |
++--------+
+| apple  |
+| test   |
++--------+
+
+테이블에 입력하는 값 value 전달 순서 및 전달 안하는 것 null 처리
+insert into user(userPw, userId) values ('2222','jeon');
+
