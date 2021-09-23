@@ -6,18 +6,22 @@ $.ajax({
 })
 
 
-$('#b3').click(function(){
-		userValue = $('#user').val()
+$(function() {
+	$('#b1').click(function(){
+		wordValue = $('#word').val() 
 		$.ajax({
-			url: "test3.jsp",
+			url: "test.jsp",
 			data: {
-				user: userValue
+				word: wordValue
 			},
 			success: function(result){	//호출에 성공했으면
+				//alert("test.jsp 호출성공")
+				alert(result)
 				$('#d1').append(result+"<br>")
 			},
 			error: function() {
-				alert("test3.jsp 호출실패")
+				alert("test.jsp 호출실패")
 			}
 		})
 	})
+}
