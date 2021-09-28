@@ -1,11 +1,24 @@
 //휴대폰에 있는 기본 기능과 연결할 때에는 하기 기능을 사용한다
-//Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("[액션]"));
+//Intent intent = new Intent("[인텐트 내용]");
 //startActivity(intent);
 
+//액티비티간 이동
+//Intent intent = new Intent(현재액티비티자바파일명.this, 넘어갈액티비티자바파일명.class);
+//startActivity(intent);
+
+//앱 외부로 이동
+//Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("[액션]"));
+//startActivity(intent);
 //액션 내용들
 //갤러리: "content://media/internal/images/media"
 //웹사이트: "http://m.naver.com"
 //전화: "tel:/01011112222"
+
+
+//앱/액티비티 종료는
+//finish();
+
+
 package com.example.mobile01;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,6 +45,15 @@ public class MainActivity3 extends AppCompatActivity {
         button4 = findViewById(R.id.button4);
         button5 = findViewById(R.id.button5);
 
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "메인페이지로 이동합니다.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity6.this, MainActivity4.class);
+                startActivity(intent);
+            }
+        });
+        
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,13 +63,7 @@ public class MainActivity3 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Kakao 좀 오르자...",
-                        Toast.LENGTH_LONG).show();
-            }
-        });
+        
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +87,7 @@ public class MainActivity3 extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "우리 이제 그만하자",
                         Toast.LENGTH_LONG).show();
+                finish();
             }
         });
 
