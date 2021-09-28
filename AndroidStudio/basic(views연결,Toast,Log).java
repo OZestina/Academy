@@ -1,3 +1,21 @@
+//xml파일에서 디자인한 view들을 java파일에서 인식 및 처리해줘야 액션이 가능하다.
+
+// 1) 각 액티비티에서 사용할 view의 이름을 선언
+//      > 인풋이 있는 텍스트의 경우 EditText로 선언
+// 2) onCreate 메서드 안에 선언된 view의 이름과 xml view id를 연결
+// 3) 사용
+//      > 값 가져오기 --> getText()
+//        String text = text1.getText().toString(); //텍스트는 toString() 한 번 더 해줘야한다
+//      > 값 설정하기 --> setText()
+//        text1.setText("결과는 "+sum);
+
+//Toast(토스트)는 액션 시 하단에 작게 뜨는 알림창이다
+//Toast.makeText(창띄울 위치, 띄울 텍스트, 띄울 시간).show();
+//ex) Toast.makeText(getApplicationContext(), text,Toast.LENGTH_LONG).show();
+
+//로그(콘솔)에 찍기
+//Log.i("","[출력할 텍스트]");  //run 창에 뜬다
+
 package com.example.mobile01;
 
 import androidx.appcompat.app.AppCompatActivity;
