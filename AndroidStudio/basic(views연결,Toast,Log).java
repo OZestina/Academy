@@ -14,7 +14,12 @@
 //ex) Toast.makeText(getApplicationContext(), text,Toast.LENGTH_LONG).show();
 
 //로그(콘솔)에 찍기
-//Log.i("","[출력할 텍스트]");  //run 창에 뜬다
+//Log._("","[출력할 텍스트]");  //run 창에 뜬다
+//Log.v(); // Verbose
+//Log.d(); // Debug
+//Log.i(); // Info
+//Log.w(); // Warning
+//Log.e(); // Error
 
 package com.example.mobile01;
 
