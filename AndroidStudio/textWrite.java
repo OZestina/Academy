@@ -14,7 +14,7 @@ String date = text1.getText().toString();
 String schedule = text2.getText().toString();
 //파일에 저장해보자
  try {
-    FileOutputStream file = openFileOutput(date+".txt",MODE_PRIVATE); //
+    FileOutputStream file = openFileOutput(date+".txt",MODE_PRIVATE); //MODE_PRIVATE는 덮어쓰기, MODE_APPEND는 추가해서 쓰기!
     file.write(schedule.getBytes());  //저장할 때 byte로 해야하는거여서 Byte로 형변환 필요
     file.close();
   } catch (FileNotFoundException e) { //파일 없을 때 에러 처리
@@ -28,3 +28,5 @@ String schedule = text2.getText().toString();
   }
 text1.setText("");                    //입력값 칸 빈칸으로 리셋!
 text2.setText("");
+
+
