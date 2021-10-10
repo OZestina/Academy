@@ -1,5 +1,16 @@
 //try~catch, throws는 런타임에러를 잡는 아이임!
 
+// 반드시 예외처리(try/catch, throws) 해주어야 하는 상황?
+// => 자바에서 외부 자원을 연결해야 할 때 such as,,,
+// - File
+// - DB
+// - network
+// - 컴퓨터 주요 device (CPU)
+
+// → 예외 처리를 왜 하는가?
+// 프로그램이 중단되는 상황이 생기면 더 이상 실행하지 않고 넘어가거나 try/catch에 있는 내용이 실행되고 나머지 프로그램이 중단되지 않게 하는 것
+// 중단(interrupt, 방해)
+
 //ArithmeticException: 산술계산 예외 (0으로 나누는 등...)
 //IOException: 입출력 예외
 //IndexOutOfBoundsException: 배열 인덱스 에러
