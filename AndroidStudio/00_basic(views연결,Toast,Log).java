@@ -35,9 +35,9 @@ import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
 
-    TextView text1;
+    TextView text1;     //label 같은 것
     Button b1, b2;
-    EditText t1, t2;
+    EditText t1, t2;    //input 창 (user가 타이핑하는 창)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +54,8 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.i("","-------> 버튼을 클릭했음");  //run에 뜨는 로그
+                text1.setText("눌림!");   //label 내용 바꾸기
+                //text1.setText("");    //이렇게하면 빈칸으로 바뀜
                 String text = text1.getText().toString();
                 Toast.makeText(getApplicationContext(), text,
                         Toast.LENGTH_LONG).show();
