@@ -1,10 +1,9 @@
 //Convert view에서 바로 TableLayout을 설정할 수 있다 (전체 페이지를 TableLayout 적용 시)
 
 
-
-
-// 액티비티 상단 바에 아이콘 넣기 (좌측)
-// getSupportActionBar().setDisplayShowHomeEnabled(true);  //
+// (참고) 액티비티 상단 바에 아이콘 넣기 (좌측)
+// => java class 파일 onCreate 안에 설정
+// getSupportActionBar().setDisplayShowHomeEnabled(true); 
 // getSupportActionBar().setIcon(R.drawable.pici_icon);    //화살표를 아이콘으로 바꾸겠다
 // setTitle("명화선호도 투표");
 
