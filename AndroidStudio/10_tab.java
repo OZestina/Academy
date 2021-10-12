@@ -1,3 +1,7 @@
+//탭으로 나눠진 것
+//손코딩도 가능하고, Palette> Legacy> TabHost 로 선택해서 사용도 
+
+//xml 파일
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -74,3 +78,31 @@
     </TabHost>
 
 </LinearLayout>
+
+
+//java class
+public class TabActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_tab);
+
+        TabHost tabHost = findViewById(R.id.tabHost);
+        tabHost.setup();    //기초적인 tab 초기화
+
+        //각 tab마다의 설정을 넣음
+        TabHost.TabSpec tabSpecSong = tabHost.newTabSpec("SONG").setIndicator("음악별");   //indicator에 들어가는게 나타나는 이름
+        tabSpecSong.setContent(R.id.tabSong);   //layout을 끼워넣음
+        tabHost.addTab(tabSpecSong);            //TabHost에 TabSpec 추가
+
+        TabHost.TabSpec tabSpecArtist = tabHost.newTabSpec("ARTIST").setIndicator("가수별");
+        tabSpecArtist.setContent(R.id.tabArtist);
+        tabHost.addTab(tabSpecArtist);
+
+        TabHost.TabSpec tabSpecAlbum = tabHost.newTabSpec("ALBUM").setIndicator("앨범별");
+        tabSpecAlbum.setContent(R.id.tabAlbum);
+        tabHost.addTab(tabSpecAlbum);
+
+    }
+}
