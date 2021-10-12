@@ -23,6 +23,7 @@ public class MainActivity4 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //(버튼 클릭 시) dialogView 객체 생성
+                //inflate안에는 1)어디에 적용할 것인지의 context, 사용할 layout파일, (null-추후 추가 예정) vhgka
                 dialogView = (View) View.inflate(MainActivity4.this, R.layout.dialog1,null);
 
                 //inflate 안의 값을 바꿀 때에는 [view명].findViewById로 진행
