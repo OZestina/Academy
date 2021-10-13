@@ -1,25 +1,41 @@
+
 1) 다운로드
 https://www.sqlite.org/download.html
 운영체제와 맞는 파일 중 analyzer가 있는 것으로 다운받아서
 압축 풀기
 
 2) cmd로 실행
-> sqlite3 testdb      //sqlite3 압축푼 폴더에 가서 실행. 실행할 db명 함께 써줘야 함
+> sqlite3 testdb       //sqlite3 압축푼 폴더에 가서 실행. 실행할(만들) DB명 함께 써줘야 함
 
-3) 조작 (기본적으로 sql과 동일)
+3) 조작 (기본적으로 sql과 동일)              //테이블을 만들지 않으면 DB가 안생긴다고 합니다
 sqlite> create table member (
    ...> id text, pw text);
 sqlite> insert into member values ('a','a');
 sqlite> select * from member;
 a|a
-sqlite> .header on      //column 이름도 붙여줘
-sqlite> .mode column    //column 사이 간격 띄워줘
+sqlite> .header on                        //column 이름도 붙여줘
+sqlite> .mode column                      //column 사이 간격 띄워줘
 sqlite> select * from member
    ...> ;
 id  pw
 --  --
 a   a
-sqlite> .exit           //sqlite3 멈춰!
+sqlite> .exit                             //sqlite3 멈춰!
 
-4) 디비버로 연결
+
+
+[디비버로 연결]================================================
 sqlite로 검색 & 만든 db를 path 찾아서 직접 연결해줘야함
+
+[Virtual Device에 DB연결]======================================
+1) 안드로이드 스튜디오에서 가상머신 실행
+2) Device File Explorer에서 액티비티를 찾아 만들어진 DB upload
+
+[Virtual Device cmd로 연결]====================================
+1) Sdk 폴더 저장된 디렉토리 확인 (설정에서 검색)
+2) cmd에서 Sdk 폴더 내의 platform-tools로 이동
+> adb root              (abd.ext root로 실행)
+> adb shell             (가상머신 접속)
+# cd data/data/com.example.mobile10/ (프로젝트폴더)
+# ls 		               (폴더 내 testdb 저장 확인)
+
