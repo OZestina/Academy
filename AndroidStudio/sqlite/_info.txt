@@ -1,0 +1,23 @@
+1) 다운로드
+https://www.sqlite.org/download.html
+운영체제와 맞는 파일 중 analyzer가 있는 것으로 다운받아서
+압축 풀기
+
+2) cmd로 실행
+> sqlite3 testdb      //sqlite3 압축푼 폴더에 가서 실행. 실행할 db명 함께 써줘야 함
+
+3) 조작 (기본적으로 sql과 동일)
+sqlite> create table member (
+   ...> id text, pw text);
+sqlite> insert into member values ('a','a');
+sqlite> select * from member;
+a|a
+sqlite> .header on      //column 이름도 붙여줘
+sqlite> .mode column    //column 사이 간격 띄워줘
+sqlite> select * from member
+   ...> ;
+id  pw
+--  --
+a   a
+sqlite> .exit           //sqlite3 멈춰!
+
