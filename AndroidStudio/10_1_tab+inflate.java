@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="이미지 변환"/>
-    </LinearLayout>
+</LinearLayout>
 
 //xml파일 - activity 파일
 <TabHost
