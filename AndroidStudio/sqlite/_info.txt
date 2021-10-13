@@ -21,3 +21,5 @@ id  pw
 a   a
 sqlite> .exit           //sqlite3 멈춰!
 
+4) 디비버로 연결
+sqlite로 검색 & 만든 db를 path 찾아서 직접 연결해줘야함
