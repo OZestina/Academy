@@ -10,9 +10,12 @@ https://www.sqlite.org/download.html
 3) 조작 (기본적으로 sql과 동일)              //테이블을 만들지 않으면 DB가 안생긴다고 합니다
 sqlite> create table member (
    ...> id text, pw text);
+   
 sqlite> insert into member values ('a','a');
+
 sqlite> select * from member;
 a|a
+
 sqlite> .header on                        //column 이름도 붙여줘
 sqlite> .mode column                      //column 사이 간격 띄워줘
 sqlite> select * from member
@@ -20,6 +23,9 @@ sqlite> select * from member
 id  pw
 --  --
 a   a
+
+sqlite> .schema                           //schema 확인
+
 sqlite> .exit                             //sqlite3 멈춰!
 
 
