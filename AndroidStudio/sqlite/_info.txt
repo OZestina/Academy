@@ -43,5 +43,24 @@ sqlite로 검색 & 만든 db를 path 찾아서 직접 연결해줘야함
 > adb root              (abd.ext root로 실행)
 > adb shell             (가상머신 접속)
 # cd data/data/com.example.mobile10/ (프로젝트폴더)
-# ls 		               (폴더 내 testdb 저장 확인)
+# mkdir databases       (DB용 디렉토리 생성)
+# cd databases/         (디렉토리로 이동)
+# sqlite3 phonedb       (sqlite3으로 phonedb라는 DB에 접속)
 
+*sqlite 내에서의 조작은 위의 sqlite 실행과 동일
+
+가상머신에서 db에 접속해 변경하려면 나와 내 그룹에게 DB의 읽기/쓰기 권한을 줘야함
+generic_x86:/data/data/com.example.mobile11/databases # ls -al
+total 32
+drwxrwxrwx 2 root    root     4096 2021-10-14 01:59 .
+drwx------ 5 u0_a147 u0_a147  4096 2021-10-14 01:56 ..   (가상머신 유저 확인!)
+-rw------- 1 root    root    12288 2021-10-14 01:59 phonedb
+
+# chown u0_a147 phonedb                (유저로 phonedb 유자 변경)
+# chgrp u0_a147 phonedb                (유저로 phonedb 그룹 변경)
+# chmod 660 phonedb                    (나&내그룹 rw권한 부여로 변경)
+   => -rw-rw---- 1 u0_a147 u0_a147 12288 2021-10-14 01:59 phonedb
+   
+   
+   
+View > Tool Windows > Database Inspector
