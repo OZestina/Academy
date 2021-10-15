@@ -33,6 +33,14 @@ public class AdapterActivity extends AppCompatActivity {
         //객체 생성 시 activity (this), 레이아웃(simple_list_item_1), 데이터(mid) 필요
         ArrayAdapter<String> adapter
                 = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, mid);
+            
+        //new ArrayAdapter'<>'에 에러가 발생하는 경우, activity가 this로 안잡혔을 가능성이 있다
+        //그럴때는 this대신, getApplicationContext() / MainActivity.this 를 사용해보자
+//         ArrayAdapter<String> adapter 
+//                 =  new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, names);
+//         ArrayAdapter<String> adapter2 
+//                 =  new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, numbers);
+            
 
         //ListView 객체에 adapter 세팅
         listView.setAdapter(adapter);
