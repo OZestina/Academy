@@ -26,6 +26,8 @@ a   a
 
 sqlite> .schema                           //schema 확인
 
+sqlite> .table                            //table 확인
+
 sqlite> .exit                             //sqlite3 멈춰!
 
 
