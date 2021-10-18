@@ -14,7 +14,7 @@
             스프링 프로젝트에서는 project 하나를 의미-->
 
     <TabHost
-        android:id="@+id/tabHost"
+        android:id="@+id/tabHost"                       //id 정해주자
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
