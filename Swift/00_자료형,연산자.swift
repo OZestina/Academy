@@ -33,3 +33,15 @@ print(someValue)
 
 someValue = 100                 //변수의 데이터 타입이 Any여서 스트링도, 정수도 담을 
 print(someValue)
+
+
+
+
+//?? operator
+//if nil -> a else b 의 의미
+var value2:String?
+var value1 = "i am default value"
+//---> value2가 nil이면 value1을 value3에 넣고,
+//     value2가 nil이 아니면 value2값을 value3에 대입
+var value3 = value2 ?? value1
+
