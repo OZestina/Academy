@@ -40,3 +40,20 @@ func hobby(_ fields:String...) {
     print(fields) }
 hobby("a","a")      //["a", "a"]
 hobby("b","n","b")  //["b", "n", "b"]
+
+
+
+
+//값을 전달하는 원래의 변수값에 영향을 미치고 싶은 경우 (주소값 전달, call by reference)
+//파라미터 지정 시 inout 추가
+//함수 사용 시 변수명 앞에 주소값을 나타내는 & 추가
+func swapTwoInts(_ a: inout Int, _ b: inout Int) {
+    let temp = a
+    a = b
+    b = temp
+}
+
+var a = 1
+var b = 2
+swapTwoInts(&a, &b) //&추가! (inout으로 선언됐으며 &쓰라고 나옴)
+print(a, b)         //2 1
