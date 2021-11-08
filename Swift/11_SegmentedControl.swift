@@ -21,6 +21,7 @@ class TasteBev: UIViewController {
     //버튼 누르면 다음 페이지로 이동 & 옵션값 넘기기
     @IBAction func btnBevResult(_ sender: UIButton) {
         guard let go = self.storyboard?.instantiateViewController(withIdentifier: "resultBev") as? ResultBev else { return }
+        //넘기는 배열
         go.options = options
         //페이지 이동 실행
         self.present(go, animated: true)
@@ -33,6 +34,7 @@ class TasteBev: UIViewController {
     
     //옵션 선택에 따라 배열 변경
     @IBAction func option1(_ sender: UISegmentedControl) {
+        //선택값은 0,1,...로 나오는데, sender.selectedSegmentIndex
         optionChoose(0,sender.selectedSegmentIndex) }
     @IBAction func option2(_ sender: UISegmentedControl) {
         optionChoose(1,sender.selectedSegmentIndex) }
