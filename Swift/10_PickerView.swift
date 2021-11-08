@@ -66,3 +66,76 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
 }
 
+// [delegate 설정]=====================================================================
+
+import UIKit
+
+class Page2ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    @IBOutlet var imageLabel: UILabel!
+    @IBOutlet var pickerImage: UIPickerView!
+    @IBOutlet var imageView: UIImageView!
+    
+    //필요한 변수 선언
+    let MAX_ARRAY_NUM = 10
+    let PICKER_VIEW_COLUMN = 1
+    //range를 넘어가도 어느정도 유동적으로 감안해주는 CG
+    let PICKER_VIEW_HEIGHT : CGFloat = 80
+    var imageArray = [UIImage?]()
+    var imageFileName = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //imageArray에 UIImage만들어서 넣어주자
+        for i in 0..<MAX_ARRAY_NUM {
+            let image = UIImage(named: imageFileName[i])
+            imageArray.append(image)
+        }
+        
+        imageLabel.text = imageFileName[0]
+        imageView.image = imageArray[0]
+        
+    }
+    
+    //피커뷰 몇개 넣을것인지
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return PICKER_VIEW_COLUMN
+    }
+    //전체 피커뷰에 넣을 아이템 개수
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return imageFileName.count
+    }
+    //피커뷰 높이 결정
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return PICKER_VIEW_HEIGHT
+    }
+    
+    //⭐피커뷰 delegate 설정해줘야 함⭐
+    //피커뷰 우클릭해서 컨트롤러메뉴 좌측 아이콘으로 드래그,
+    //delegate 선택
+    
+    //피커뷰에 무엇을 넣을지
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let imageObject = UIImageView(image: imageArray[row])
+        //이미지뷰의 크기 결정
+        imageObject.frame = CGRect(x: 0, y: 0, width: 100, height: 150)
+        return imageObject
+    }
+    
+    //String을 넣어줄 경우 titleForRow로 진행
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return imageFileName[row]
+//    }
+//
+    //피커뷰에서 하나를 선택 후 어떤 처리를 할지
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //파일 이름 설정, 이미지 변화
+        imageLabel.text = imageFileName[row]
+        imageView.image = imageArray[row]
+    }
+    
+
+
+}
+
