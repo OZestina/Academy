@@ -8,6 +8,7 @@
 import UIKit
 
 //PickerView 사용하려면 UIPickerViewDelegate, UIPickerViewDataSource extends 해줘야함
+//delegate를 extends해야 pickerView 자동완성 사용 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet var pickerView: UIPickerView!
