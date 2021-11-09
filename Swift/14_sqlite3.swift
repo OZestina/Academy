@@ -208,11 +208,37 @@ class SQLite3DB {
     
     //select 함수
     let sql_query = "select * from contact"
-//    func select(<#parameters#>) -> <#return type#> {
+    func select() {
+        
+        let db = openDB()
+        var con : OpaquePointer? = nil
+        
+        //sql문 객체화
+        if sqlite3_prepare_v2(db, sql_query, -1, &con, nil) == SQLITE_OK {
+            
+            var result = ""     //검색결과 저장하기 위한 변수
+            while sqlite3_step(con) == SQLITE_ROW {
+                print("회원 검색 성공")
+                //column에 따라 정보 가져오기
+                let id = sqlite3_column_int(con, 0)
+                //DB에서 바로 가져온 스트링은 cString이어서 캐스팅 한 번 해줘야함
+                let n = sqlite3_column_text(con, 1)
+                let name = String(cString: n!)
+                var row = "id: "+String(id)+", name: "+name
+                print("row>> ", row)
+                result.append(row+"\n")
+            }
+            
+            print(result)
+            total2?.text = result
+            
+        } else {
+            print("sql query 객체화 실패")
+        }
         
         //할애한 자원 모두 해제시켜라
-//        sqlite3_finalize(con)
-//    }
+        sqlite3_finalize(con)
+    }
     
     
 }
