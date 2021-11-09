@@ -73,7 +73,11 @@ class Page3ViewController: UIViewController, WKNavigationDelegate {
             myWebView.loadHTMLString(htmlString, baseURL: nil)
         }
         //저장한 html page 로딩 가능
+        //새로만들기 > others > empty 선택
+        //확장자명은 .html로 진행
+        //내용은 동일하게 html내용으로 진행하면 됨
         @IBAction  func btnLoadHtmlFile(_ sender: UIButton) {
+            //파일 루트를 연결해준다 (파일 이름, 파일 형식)
             let filePath = Bundle.main.path(forResource: "htmlView", ofType: "html")
             let myUrl = URL(fileURLWithPath: filePath!)
             let myRequest = URLRequest(url: myUrl)
