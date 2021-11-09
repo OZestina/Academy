@@ -1,9 +1,10 @@
-//
-//  Page3ViewController.swift
-//  test06
-//
-//  Created by Apple on 2021/11/03.
-//
+//웹키트뷰 사용을 위해 Permission 설정을 해줘야 함
+// > Info.plist를 수정
+// > Information Property List 하단에
+// > App Transport Security Settings 추가 (+)
+// > 그 하단에 (삼각형 아래로 향하게 하고)
+// > Allow Arbitrary Loads 추가 (+)
+// > Allow Arbitrary Loads의 value를 YES로 변경
 
 import UIKit
 import WebKit   //WKWebView용
