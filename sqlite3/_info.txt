@@ -66,3 +66,31 @@ drwx------ 5 u0_a147 u0_a147  4096 2021-10-14 01:56 ..   (가상머신 유저 �
    
    
 View > Tool Windows > Database Inspector
+
+
+
+
+
+[MAC에서 실행]====================================================================================
+
+1) 하기의 방법으로 path를 구함
+
+let path: String = {
+    let fileManager = FileManager.default
+    return fileManager.urls(for:.libraryDirectory, in:.userDomainMask).last!.appendingPathComponent("mega.db").path
+}()
+
+func openDB() -> OpaquePointer? {
+    var con : OpaquePointer? = nil
+    if sqlite3_open(path, &con) == SQLITE_OK {
+        print("connect succeeded") }
+    else { print("connect failed") }
+    return con
+}
+
+2) 터미널에서 library까지 경로 이동 (하기와 같은 path가 나옴)
+/Users/apple/Library/Developer/CoreSimulator/Devices/C3A2F475-257E-400E-9514-5DB469B5C058/data/Containers/Data/Application/BBDD7BC2-709B-4535-9A1C-70C475860239/Library/mega.db
+
+3) sqlite3 디비명 으로 접속 (sqlite3 company.db)
+
+4) 접속 후 컨트롤은 윈도우와 동일
