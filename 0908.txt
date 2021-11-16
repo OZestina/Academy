@@ -1,0 +1,35 @@
+orm(object relationalDB mapping)
+- DB데이터를 검색할 때 검색결과를 어느 object에 mapping할지 정의
+- java에서는 주로 DTO class 이용
+- 한 행 검색 시: 자바 DTO 클래스 하나 당 RDB 테이블의 한 생
+- 여러개의 행 검색 시: 가방 역할의 DTO를 여러개 넣을 수 있는 컨테이너 역할의 iterable 필요 -> ArrayList, List
+
+========================
+쓰레드...
+========================
+$(function(){
+  var box = $('.box');
+  var btn_100px = $('.btn_100px');
+  var btn_200px = $('.btn_200px');
+  var btn_300px = $('.btn_300px');
+ 
+  btn_100px.click(function(){
+    box.css('width','100px');
+  });
+  btn_200px.click(function(){
+    box.css('width','200px');
+  });
+  btn_300px.click(function(){
+    box.css('width','300px');
+  });
+});
+========================
+js : 브라우저의 동적인 처리 담당
+jquery : 자바스크립트의 라이브러리
+ajax : 자바스크립트의 비동기통신
+json
+
+
+
+
+$.ajax(JSON타입의 입력값)

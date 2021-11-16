@@ -1,0 +1,28 @@
+
+시리즈, 데이터 프레임 위주로
+- 시리즈: 리스트 형태의 열을 다루는 객체...?
+브로드캐스트 (전체 배열에 연산 한 번에 하는 것, map이랑은 다르다고 함)
+
+iloc, loc
+3D 객체?
+
+토이 프로젝트 - 타이타닉 예제, 3~4개 정도 파봐라
+
+인공지능이 분류 
+값 예측 (내일 주가는 어떨까?)
+
+ajax
+
+
+//테이블에 입력하는 값 value 전달 순서 및 전달 안하는 것 null 처리
+insert into user(userPw, userId) values ('2222','jeon');
+
+
+페이징 처리
+지도
+
+서부고용센터
+02-2077-6021
+
+별찍기
+https://melthleeth.tistory.com/entry/HTML-CSS%EB%A1%9C-%EB%B3%84%EC%B0%8D%EA%B8%B0-Star-Rating
